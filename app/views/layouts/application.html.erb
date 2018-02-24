@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>TheCookbook</title>
+    <%= csrf_meta_tags %>
+    <link href="https://fonts.googleapis.com/css?family=Averia+Sans+Libre|Bungee+Inline|Kranky|Londrina+Shadow" rel="stylesheet">
+
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+
+  <body>
+    <% if logged_in? %>
+      <%= link_to "Logout", logout_path, {method: "DELETE"} %>
+    <% else %>
+      <%= link_to "Login", new_session_path %>
+    <% end %>
+
+    <div class="area"></div><nav class="main-menu">
+        <ul>
+            <li>
+                <a href="/">
+                    <i class="fa fa-home fa-2x"></i>
+                    <span class="nav-text">
+                        HOME
+                    </span>
+                </a>
+              
+            </li>
+          
+            <li class="has-subnav">
+                <a href="/users/new">
+                    <i class="fa fa-list fa-2x"></i>
+                    <span class="nav-text">
+                        SIGN UP
+                    </span>
+                </a>       
+            </li>
+
+            <li class="has-subnav">
+                    <a href="/sessions/new">
+                        <i class="fa fa-list fa-2x"></i>
+                        <span class="nav-text">
+                            LOG IN
+                        </span>
+                    </a>       
+                </li>
+
+    
+            <li class="logout">
+                <a href="/logout">
+                      <i class="fa fa-power-off fa-2x"></i>
+                    <span class="nav-text">
+                        Logout
+                    </span>
+                </a>
+            </li>  
+    </nav>
+
+
+
+    <div class="container">
+    <%= yield %>
+    </div>
+  </body>
+</html>
