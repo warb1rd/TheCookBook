@@ -3,16 +3,16 @@ class ApplicationController < ActionController::Base
   helper_method :current_user, :logged_in?
 
   def current_user
-    @current_user ||= User.find(session[:user_id]) if session[:user_id]
+    return @current_user ||= User.find(session[:user_id]) if session[:user_id]  #go into the User database and find the user's id only if theres a session with a user id to begin with.
   end
 
   def logged_in?
-    !!current_user
+    !!current_user                                                       #turns current_user to boolean
   end
 
   def authorize
-    unless logged_in?
-      redirect_to new_session_path
-    end
+      redirect_to new_session_path unless logged_in?
   end
 end
+
+

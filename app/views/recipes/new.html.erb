@@ -1,0 +1,13 @@
+<h1>New Recipe</h1>
+
+<%= form_for @recipe do |f| %>
+    <%= f.text_field :title, placeholder: "Title" %>
+    <%= f.text_field :directions, placeholder: "Directions" %>
+    <%= f.text_field :ingredients, placeholder: "Ingredients" %>
+    <%= f.file_field :image, placeholder: "Add Image url" %>   <%#upload image from desktop?%>
+    
+    <%= radio_button_tag(:private, "Private") %> 
+    <%= radio_button_tag(:public, "Public") %>
+    <%= f.submit "Submit Recipe" %>
+    
+<% end %>

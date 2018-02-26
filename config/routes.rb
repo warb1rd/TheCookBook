@@ -4,9 +4,14 @@ root "users#index"
 
 resources :users
 
-delete '/logout' => 'sessions#destroy', as: :logout
+resources :recipes                              
 
-resources :sessions, only: [:new, :create]
+resources :sessions, only: [:new, :create]                      #doesn't create entire 7 routes. Only creates new and create.
 
-  # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
+# NEED TO UNDERSTAND WHY GET WORKS INSTEAD OF DELETE. CHECK APPLICATION.HTML FOR CLUES.
+get "/logout" => "sessions#destroy", as: :logout                #if someone sends a delete request in logout, it'll do the action destroy
+
+
 end
+
+

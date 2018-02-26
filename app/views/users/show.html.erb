@@ -1,2 +1,14 @@
-<h1>Users#show</h1>
-<p>Find me in app/views/users/show.html.erb</p>
+<h4 class = "title">Welcome, <%= @user.username %></h4>
+
+<% if @user == current_user %>
+<ul id = "new_recipe">
+    
+    <li> <%= @user.username %></li>
+    <li> <%= @user.email %></li>
+    <li id = "edit" > <%= link_to "EDIT PROFILE", edit_user_path %> </li>             <%#CAN I USE BUTTON_TO%>
+    <li id = "new-recipe" > <%= link_to "ADD NEW RECIPE", new_recipe_path %> </li> 
+
+    
+</ul>
+<% end %>
+</div>
