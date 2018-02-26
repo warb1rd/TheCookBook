@@ -1,2 +1,15 @@
-<h1>Recipes#edit</h1>
-<p>Find me in app/views/recipes/edit.html.erb</p>
+
+    <%= form_for @recipe do |f| %>
+
+        <%= f.text_field :title, placeholder: f.title %>
+        <%= f.text_field :directions, placeholder: f.directions %>
+        <%= f.text_field :ingredients, placeholder: f.ingredients %>
+        <%= f.file_field :image, placeholder: "Add New url" %>              <%#upload image from desktop%>
+
+        <%= radio_button_tag(:private, "Private") %>                        <%# Need to create public private model %>
+        <%= radio_button_tag(:public, "Public") %>
+        <%= f.submit "Submit Recipe" %>
+
+    <% end %>
+
+

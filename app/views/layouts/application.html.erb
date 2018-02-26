@@ -9,7 +9,7 @@
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
-  <body>
+  <body> 
 
     <div class="area"></div>
     <nav class="main-menu">
@@ -19,37 +19,35 @@
                 <i class="fa fa-home fa-2x"></i>
                 <span class="nav-text">HOME</span>
                 </a>            
-            </li>
-            
+            </li> 
             <!-- <% if logged_in? %> -->
             <!-- <%= link_to "Logout", logout_path, {method: "DELETE"} %>
             <% else %>
             <%= link_to "Login", new_session_path %>
           <% end %> -->
-
-              <% if logged_in? %> 
-              <% {method:"DELETE"} %>
-              <li class="logout">
-                  <a href="/logout">
+            <% if logged_in? %> 
+                <li class="logout">                    
+                <%= link_to logout_path(current_user, current_user.id), method: :delete,remote: true do %>
+                <i class="fa fa-power-off fa-2x"></i>
+                <span class="nav-text">LOG OUT</span>
+            <% end %>
+                  <!-- <a href="/logout">
                   <i class="fa fa-power-off fa-2x"></i>
                   <span class="nav-text">LOG OUT</span>
-                  </a>
+                  </a> -->
               </li> 
-
               <li class="has-subnav">
-                  <a href="/recipes">
+                  <a href="/recipes">  
                     <i id = "flask" class="fa fa-flask fa-2x"></i>
                   <span class="nav-text">MY RECIPES</span>
                   </a>       
               </li>
-
               <li class="has-subnav">
-                  <a href="/users">
+                  <a href="/users/<%= current_user.id %>">
                     <i class="fa fa-user-secret fa-2x"></i>
                   <span class="nav-text">MY PROFILE</span>
                   </a>       
               </li>
-
               <% else %>
               <li class="has-subnav">
                   <a href="/users/new">
@@ -57,7 +55,6 @@
                   <span class="nav-text">SIGN UP</span>
                   </a>       
               </li>
-
               <li class="has-subnav">
                   <a href="/sessions/new">
                   <i class="fa fa-list fa-2x"></i>
@@ -78,5 +75,6 @@
     <div class="container">
     <%= yield %>
     </div>
+    
   </body>
 </html>

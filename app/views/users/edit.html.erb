@@ -3,12 +3,16 @@
             <h2>EDIT PROFILE</h2>
             
           <%= form_for @user do |f| %>
+          <fieldset disabled>
+              <div class="form-group">
+                <label for="disabledTextInput"></label>
+                <input type="text" id="disabledTextInput" class="form-control" placeholder= <%= @user.email %>>
+              </div>
+          </fieldset>
             <div class="form-group">
               <%= f.text_field :username, class: "form-control", placeholder: @user.username %>
             </div>
-            <div class="form-group">
-              <%= f.text_field :email, class: "form-control", placeholder: @user.email %>
-            </div>
+            
             <div class="form-group">
               <%= f.password_field :password, class: "form-control", placeholder: "Password" %>
             </div>
