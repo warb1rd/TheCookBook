@@ -21,6 +21,9 @@
     padding-left: 10px;
 }
 
+#flask {
+    color: gray;
+}
 .main-menu:hover,nav.main-menu.expanded {
     width:160px;
 // overflow:visible;
@@ -64,8 +67,7 @@
     font-size: 14px;
     text-decoration:none;
     transform:translateZ(0) scale(1,1);
-    transition:all .1s linear;
-  
+    transition:all .1s linear; 
 }
 
 .main-menu .nav-icon {
@@ -84,8 +86,7 @@
     vertical-align:middle;
     width:190px;
     font-family: 'Titillium Web', sans-serif;
-    padding-left: 25px;
-    
+    padding-left: 25px;   
 }
 
 .main-menu>ul.logout {
@@ -142,6 +143,7 @@ body {
     background-image: url("https://i.imgur.com/wM7BG6V.jpg");
     background-repeat: no-repeat;
     background-size: cover;
+    background-attachment: fixed;
     background-color: #222629;
     font-family: 'Titillium Web';
     color: #ff652f;
@@ -160,40 +162,42 @@ body {
 }
 
 .col-md-6.offset-md-3 {
-    margin-top: 100px;
+    margin-top: 200px;
+    // background-color: #222629;
+    // opacity: .75;
 }
 
 .title {
     text-align: left;
     margin-top: 20px;
     margin-left: 80px;
-    border-bottom: 1px solid #ff652f;
     color: #ff652f;
     width: 350px;
 }
 
 #title {
     text-align: left;
-    font-weight: bold;
+    font-weight:bolder;
     margin-top: 20px;
     margin-left: 80px;  
-    border-bottom: 1px solid #ff652f;
     width: 350px;
 }
 
 
 #title-container{
-    background-color: #212121;
-    opacity: .75;
-    width: 1200px;
-    margin: 0 auto;
+
 }
 
 
 .description {
-    text-align: left;
-    margin-top: 10px;
-    margin-left: 80px;  
+    text-align: justify;
+    margin-top: 220px;
+    margin-left: -15px;
+    line-height: 2;
+    background-color: #222629;
+    opacity: .75;
+    width: 1200px;
+    padding-left: 80px; 
 }
 
 #new-recipe, #edit {
@@ -209,6 +213,8 @@ body {
     margin-left: 100px;
     margin-top: 50px;
     display: inline-block;
+    height: 360px;
+    vertical-align: top;
 }
 
 #new_recipe{
@@ -217,11 +223,10 @@ body {
     margin-left: 50px;  
 }
 
-#recipe-new{
+.img-box{
+    height: 246px;
     
 }
 
-.card-img-top{
-}
 
 
