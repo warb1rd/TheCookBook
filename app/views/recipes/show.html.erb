@@ -3,10 +3,10 @@
   <div class="card-body">
 
     <h5 class="card-title"><%= @recipe.title %></h5>
-    <p class="card-title"><%= @recipe.ingredients %></p>
+    <p class="card-title"><%= raw @recipe.ingredients.gsub(/\r/, '<br/>') %></p>            <%#gsub(/\r/, '<br/>') - converts all the \returns or enters/ to a line break%>
     <p class="card-title"><%= @recipe.directions %></p>
     
-    <% if @user == current_user %>                                                          <%#THIS ISN'T WORKING!ITS DOING THE OPPOSITE :|%>
+    <% if @user == current_user %>                                                          
         <%= link_to "DELETE RECIPE", "/recipes/#{@recipe.id}", class: "btn btn-primary", method: "delete", data: {confirm:"ARE YOU SURE?"} %>
         <%= link_to "EDIT RECIPE", "/recipes/#{@recipe.id}/edit", class: "btn btn-primary" %>
     <% end %>

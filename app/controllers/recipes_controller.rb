@@ -19,12 +19,11 @@ class RecipesController < ApplicationController
     @recipe.save
     
     redirect_to recipe_path(@recipe.id)
-
   end 
 
   def edit
     @recipe = Recipe.find(params[:id])
-    
+    @user = User.find(@recipe.user_id)   
   end
 
   def update
