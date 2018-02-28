@@ -1,13 +1,14 @@
 <div id = "recipe-new">
 
     <%= form_for @recipe do |f| %>
-        <%= f.text_field :title, placeholder: "Title" %>
-        <%= f.text_area :ingredients, size: "25x1", placeholder: "Ingredients" %>
-        <%= f.text_field :directions, placeholder: "Directions" %>
-        <%= f.text_field :image, placeholder: "Add Image url" %>                <%#upload image from desktop%>   
+        <%= f.text_area :title, size: "25x2", placeholder: "Title" %>
+        <%= f.text_area :ingredients, size: "25x2", placeholder: "Ingredients" %>
+        <%= f.text_area :directions, size: "25x2", placeholder: "Directions" %>
+        </br>
+        <%= f.text_field :image, size: "25x2", placeholder: "Add Image url" %>                    <%#upload image from desktop%>   
         <%# radio_button_tag(:private, "Private") %> 
-        <%# radio_button_tag(:public, "Public") %>
-        <%= f.submit "Submit Recipe" %>
+        <%# radio_button_tag(:public, "Public") %>    
+        <%= f.submit "Submit Recipe", class: "btn btn-primary" %>
         
     <% end %>
 </div>

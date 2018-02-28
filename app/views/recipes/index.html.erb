@@ -3,6 +3,10 @@
   <p id = "add-recipe"><%= link_to "ADD NEW RECIPE", new_recipe_path, class: "btn btn-primary"%> </p>                                                        <%#THIS ISN'T WORKING!ITS DOING THE OPPOSITE :|%>
 <% end %> 
 
+<% if @recipes.blank? %>
+  <h4>There are no recipes containing the term <%= params[:search] %>.</h4>
+<% end %>
+
 <% @recipes.each do |r| %>
     
 <div class="card" style="width: 18rem;">

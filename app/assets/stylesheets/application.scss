@@ -123,9 +123,9 @@ nav ul,nav li {
 }
 .main-menu li:hover>a,nav.main-menu li.active>a,.dropdown-menu>li>a:hover,.dropdown-menu>li>a:focus,.dropdown-menu>.active>a,.dropdown-menu>.active>a:hover,.dropdown-menu>.active>a:focus,.no-touch .dashboard-page nav.dashboard-menu ul li:hover a,.dashboard-page nav.dashboard-menu ul li.active a {
     color:#e2e2e2;
-    background-color:#5fa2db;
-    
+    background-color:#5fa2db;    
 }
+
 .area {
     float: left;
     background: #e2e2e2;
@@ -218,7 +218,7 @@ body {
     overflow: scroll;
 }
 
-#new_recipe {
+.user {
     list-style: none;
     margin-top: 10px;
     margin-left: 50px;  
@@ -229,9 +229,22 @@ body {
     margin-left: 75px;
     margin-top: 30px;
 }
+
+#recipe-new{
+    margin-top: 100px;
+    margin-left: 50px;
+    line-height: 30px;
+
+}
 .img-box {
     height: 246px;
-    background-color: #222629;   
+    border: 1px solid black;
+
+}
+
+.card-img-top {
+    vertical-align: middle;
+    
 }
 
 .all-users {
@@ -260,4 +273,8 @@ body {
     padding-left: 100px; 
 }
 
+.search-form{
+    margin-left: 1000px;
+    
+}
 
