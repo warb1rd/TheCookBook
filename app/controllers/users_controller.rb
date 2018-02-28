@@ -10,26 +10,29 @@ class UsersController < ApplicationController
   end
 
   def new
-    @user = User.new                                                         #creates an empty object for the form
+    @user = User.new                                                        #creates an empty object for the form
   end
 
   def create
     @user = User.new(user_params)                           
     if @user.save                                                           # If all the conditions for successfull save are met, go ahead. It also saves the user automatically before spittig out true or false value
-      session[:user_id] = @user.id                                                #USERS GO DIRECTLY INTO THE HOMEPAGE AFTER SIGNING UP                             
+      session[:user_id] = @user.id                                          #USERS GO DIRECTLY INTO THE HOMEPAGE AFTER SIGNING UP                             
       redirect_to user_path @user.id                                        # This sets the cookies (in sessions controller) for a new session for THIS user
     else
-      # "Oops, this doesn't look right. Try again"
       redirect_to new_user_path
     end
   end
 
   def edit
     @user = User.find(params[:id])
-    @user.save
   end
 
   def update
+    @user = User.find(params[:id])
+    @user.update(user_params)           
+    @user.save
+    
+    redirect_to user_path
   end
 
   def destroy

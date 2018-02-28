@@ -1,14 +1,37 @@
-<h4 class = "title">Welcome, <%= @user.username %></h4>
 
 <% if @user == current_user %>
 <ul id = "new_recipe">
+    <h4>Welcome, <%= @user.username %></h4>
     
     <li> <%= @user.username %></li>
     <li> <%= @user.email %></li>
-    <li id = "edit" > <%= link_to "EDIT PROFILE", edit_user_path %> </li>             <%#CAN I USE BUTTON_TO%>
-    <li id = "new-recipe" > <%= link_to "ADD NEW RECIPE", new_recipe_path %> </li> 
-
-    
+    <li id = "edit" > <%= link_to "EDIT PROFILE", edit_user_path, class: "btn btn-primary" %> </li>             <%#CAN I USE BUTTON_TO%>
+    <li id = "new-recipe" > <%= link_to "ADD NEW RECIPE", new_recipe_path, class: "btn btn-primary"%> </li> 
 </ul>
+
 <% end %>
+    
+
+<% @user.recipes.each do |r|%>
+    <div class="card" style="width: 18rem;">
+        <div class="card-body">
+          <div class="img-box">
+    <% if r.image != nil && r.image != "" %>
+        <%= image_tag(r.image, class: "card-img-top") %>
+    <% else %>
+        <%= image_tag("ricebowl.png", class:"card-img-top") %>
+    <% end %>
+    </div>
+    <h5 class="card-title"><%= r.title %></h5>
+    <p class="card-title"><%= raw r.ingredients.gsub(/\r/, '<br/>') %></p>            <%#gsub(/\r/, '<br/>') - converts all the \returns or enters/ to a line break%>
+    <p class="card-title"><%= r.directions %></p>
+    <p class="card-title"><%= link_to r.user.username, user_path(r.user_id) %></p>   
+
+    <% if @user == current_user %>                                                          
+        <%= link_to "DELETE RECIPE", "/recipes/#{r.id}", class: "btn btn-primary", method: "delete", data: {confirm:"ARE YOU SURE?"} %>
+        <%= link_to "EDIT RECIPE", "/recipes/#{r.id}/edit", class: "btn btn-primary" %>
+    <% end %>
+    </div>
 </div>
+
+<% end %>

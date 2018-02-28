@@ -192,41 +192,72 @@ body {
 .description {
     text-align: justify;
     margin-top: 220px;
-    margin-left: -15px;
+    margin-left: -85px;
     line-height: 2;
     background-color: #222629;
     opacity: .75;
-    width: 1200px;
-    padding-left: 80px; 
+    width: 1300px;
+    padding-left: 170px; 
 }
 
-#new-recipe, #edit {
-    color: #ff652f;
-    border: 1px solid #ff652f;
-    width: 130px;
-    text-align: center;
-    background-color: #222629;
-    margin-top: 10px;
-}
+// #new-recipe, #edit {
+//     color: #ff652f;
+//     border: 1px solid #ff652f;
+//     width: 130px;
+//     text-align: center;
+//     background-color: #222629;
+//     margin-top: 10px;
+// }
 
 .card {
-    margin-left: 100px;
-    margin-top: 50px;
+    margin-left: 75px;
+    margin-top: 30px;
     display: inline-block;
-    height: 360px;
+    height: auto;
     vertical-align: top;
+    overflow: scroll;
 }
 
-#new_recipe{
+#new_recipe {
     list-style: none;
     margin-top: 10px;
     margin-left: 50px;  
+    line-height: 50px;
 }
 
-.img-box{
+#add-recipe{
+    margin-left: 75px;
+    margin-top: 30px;
+}
+.img-box {
     height: 246px;
-    
+    background-color: #222629;   
 }
 
+.all-users {
+    list-style: none;
+    padding: 20px 0 0 100px;
+    line-height: 50px;
+}
+
+.recipe-path { 
+    display: block;
+    overflow: hidden;
+    float: right;
+}
+
+.wrapper {
+    overflow: hidden;
+    width: 175px; 
+}
+  
+.name{
+    float: right;
+    width: 50px;
+}
+
+.alert {
+    padding-left: 100px; 
+}
 
 

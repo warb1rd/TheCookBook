@@ -6,10 +6,10 @@ class SessionsController < ApplicationController
     @user = User.find_by_username(params[:username])
 
     if @user && @user.authenticate(params[:password])
-      session[:user_id] = @user.id 
+      session[:user_id] = @user.id                              
       redirect_to user_path(@user)
     else
-      # Alert or add notice that says "try again"
+      flash[:warning] = "Oops, this doesn't look right. Try again"          # The key is "warning" value is "oops..."
       redirect_to new_session_path
     end
   end

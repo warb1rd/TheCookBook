@@ -2,7 +2,7 @@
 
     <%= form_for @recipe do |f| %>
         <%= f.text_field :title, placeholder: "Title" %>
-        <%= f.text_area :ingredients, rows: 10, placeholder: "Ingredients" %>
+        <%= f.text_area :ingredients, size: "25x1", placeholder: "Ingredients" %>
         <%= f.text_field :directions, placeholder: "Directions" %>
         <%= f.text_field :image, placeholder: "Add Image url" %>                <%#upload image from desktop%>   
         <%# radio_button_tag(:private, "Private") %> 

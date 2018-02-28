@@ -10,7 +10,7 @@
   </head>
 
   <body> 
-
+    <%= render "/partials/flash"%>
     <div class="area"></div>
     <nav class="main-menu">
         <ul>
@@ -62,7 +62,13 @@
                   </a>       
               </li>
               <% end %>
-
+              <li class="has-subnav">
+                    <a href="/pages">
+                        <i class="fa fa-users fa-2x"></i>
+                        <span class="nav-text">ALL USERS</span>
+                    </a>       
+                </li>
+              </ul>
             <li class="has-subnav">
                 <a href="/recipes">
                   <i class="fa fa-flask fa-2x"></i>

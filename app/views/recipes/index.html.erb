@@ -1,4 +1,8 @@
 
+<% if current_user %>  
+  <p id = "add-recipe"><%= link_to "ADD NEW RECIPE", new_recipe_path, class: "btn btn-primary"%> </p>                                                        <%#THIS ISN'T WORKING!ITS DOING THE OPPOSITE :|%>
+<% end %> 
+
 <% @recipes.each do |r| %>
     
 <div class="card" style="width: 18rem;">
@@ -15,7 +19,6 @@
     <% if current_user && r.user_id == current_user.id %>                                                          <%#THIS ISN'T WORKING!ITS DOING THE OPPOSITE :|%>
     <%= link_to "DELETE RECIPE", "/recipes/#{r.id}", class: "btn btn-primary", method: "delete", data: {confirm:"ARE YOU SURE?"} %>
     <% end %> 
-
   </div>
 </div>
 <% end %>

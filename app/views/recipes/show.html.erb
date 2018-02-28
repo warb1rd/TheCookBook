@@ -1,15 +1,21 @@
- 
+
 <div class="card" style="width: 18rem;">
   <div class="card-body">
-
+    <div class="img-box">
+    <% if @recipe.image != nil && @recipe.image != "" %>
+      <%= image_tag(@recipe.image, class: "card-img-top") %>
+    <% else %>
+      <%= image_tag("ricebowl.png", class:"card-img-top") %>
+    <% end %>
+    </div>
     <h5 class="card-title"><%= @recipe.title %></h5>
     <p class="card-title"><%= raw @recipe.ingredients.gsub(/\r/, '<br/>') %></p>            <%#gsub(/\r/, '<br/>') - converts all the \returns or enters/ to a line break%>
     <p class="card-title"><%= @recipe.directions %></p>
-    
+    <p class="card-title"><%= link_to @recipe.user.username, user_path(@recipe.user_id)  %></p>   
+
     <% if @user == current_user %>                                                          
         <%= link_to "DELETE RECIPE", "/recipes/#{@recipe.id}", class: "btn btn-primary", method: "delete", data: {confirm:"ARE YOU SURE?"} %>
         <%= link_to "EDIT RECIPE", "/recipes/#{@recipe.id}/edit", class: "btn btn-primary" %>
     <% end %>
-
   </div>
 </div>
