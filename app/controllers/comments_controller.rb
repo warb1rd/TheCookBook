@@ -32,13 +32,10 @@ class CommentsController < ApplicationController
   def update
   end
 
-  def delete
+  def destroy
     @comment = Comment.find(params[:id])
     @comment.destroy
-    
-    if @comment.user_id != current_user.id
-      redirect_to root_path
-    end
+    redirect_to root_path
   end
 
   private

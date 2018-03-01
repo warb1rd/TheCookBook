@@ -22,7 +22,7 @@ class RecipesController < ApplicationController
   end
 
   def create
-    # @recipes = current_user.recipes.order("created_at: :desc")   #shows latest recipe first
+    # @recipes = current_user.recipes.order("created_at: :desc")                  #shows latest recipe first
 
     @recipe = current_user.recipes.new(recipes_params)
     @recipe.save
@@ -49,6 +49,7 @@ class RecipesController < ApplicationController
 
   def destroy
     @recipe = Recipe.find(params[:id])
+    # @recipe.comments.destroy
     @recipe.destroy
     
     if @recipe.user_id != current_user.id
