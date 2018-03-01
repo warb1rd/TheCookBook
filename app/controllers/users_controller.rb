@@ -15,7 +15,7 @@ class UsersController < ApplicationController
 
   def create
     @user = User.new(user_params)                           
-    if @user.save                                                           # If all the conditions for successfull save are met, go ahead. It also saves the user automatically before spittig out true or false value
+    if @user.save                                                           # If all the conditions for successfull save are met, go ahead. It also saves the user automatically before spitting out true or false value
       session[:user_id] = @user.id                                          #USERS GO DIRECTLY INTO THE HOMEPAGE AFTER SIGNING UP                             
       redirect_to user_path @user.id                                        # This sets the cookies (in sessions controller) for a new session for THIS user
     else

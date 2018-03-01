@@ -60,7 +60,10 @@ I used the app architecture and rails errors to guide me through to create the e
 I created wireframes using flashcards and iterated through it, which helped me design the site better. 
 
 ![ERD](app/assets/Images/erd.png)
-![Wireframes](app/assets/Images/Wireframes.jpg)![Pages](app/assets/Images/pages.jpg)
+
+![Wireframes](app/assets/Images/Wireframes.jpg)
+
+![Pages](app/assets/Images/pages.jpg)
 
 ---
 ### User experience
