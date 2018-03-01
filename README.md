@@ -2,6 +2,8 @@
 ---
 We have been learning Ruby and Rails for the past two weeks and this project is based on our knowledge of what we learnt using full CRUD applications
 
+![TheCookBook](https://i.imgur.com/7TiOxUU.jpg)
+
 ---
 ### Project Summary
 ---
@@ -59,11 +61,11 @@ I used the app architecture and rails errors to guide me through to create the e
 
 I created wireframes using flashcards and iterated through it, which helped me design the site better. 
 
-![ERD](app/assets/Images/erd.png)
+![ERD](./app/assets/Images/erd.png)
 
-![Wireframes](app/assets/Images/Wireframes.jpg)
+![Wireframes](./app/assets/Images/Wireframes.jpg)
 
-![Pages](app/assets/Images/pages.jpg)
+![Pages](./app/assets/Images/pages.jpg)
 
 ---
 ### User experience
