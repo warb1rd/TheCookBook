@@ -61,11 +61,11 @@ I used the app architecture and rails errors to guide me through to create the e
 
 I created wireframes using flashcards and iterated through it, which helped me design the site better. 
 
-![ERD](./app/assets/Images/erd.png)
+![ERD](https://github.com/warb1rd/TheCookBook/blob/master/app/assets/images/ERD.png?raw=true)
 
-![Wireframes](./app/assets/Images/Wireframes.jpg)
+![Wireframes](.https://github.com/warb1rd/TheCookBook/blob/master/app/assets/images/Wireframes.jpg?raw=true)
 
-![Pages](./app/assets/Images/pages.jpg)
+![Pages](https://github.com/warb1rd/TheCookBook/blob/master/app/assets/images/Pages.jpg?raw=true)
 
 ---
 ### User experience
