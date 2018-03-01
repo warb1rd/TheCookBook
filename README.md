@@ -63,7 +63,7 @@ I created wireframes using flashcards and iterated through it, which helped me d
 
 ![ERD](https://github.com/warb1rd/TheCookBook/blob/master/app/assets/images/ERD.png?raw=true)
 
-![Wireframes](.https://github.com/warb1rd/TheCookBook/blob/master/app/assets/images/Wireframes.jpg?raw=true)
+![Wireframes](https://github.com/warb1rd/TheCookBook/blob/master/app/assets/images/Wireframes.jpg?raw=true)
 
 ![Pages](https://github.com/warb1rd/TheCookBook/blob/master/app/assets/images/Pages.jpg?raw=true)
 
