@@ -9,13 +9,12 @@ class RecipesController < ApplicationController
     else
       @recipes = Recipe.all.order("created_at DESC")
     end
-
+    @comments = Comment.all
   end
 
   def show
     @recipe = Recipe.find(params[:id])
-    @user = User.find(@recipe.user_id)
-    @recipes = Recipe.all    
+    @comment = Comment.new
   end
 
   def new
@@ -38,10 +37,7 @@ class RecipesController < ApplicationController
 
   def update
     @recipe = Recipe.find(params[:id])
-    @recipe.title = params[:recipe][:title]
-    @recipe.ingredients = params[:recipe][:ingredients]
-    @recipe.directions = params[:recipe][:directions]
-    @recipe.image = params[:recipe][:image]
+    @recipe.update(recipes_params) 
     @recipe.save 
 
     redirect_to recipe_path(@recipe.id)
@@ -55,7 +51,6 @@ class RecipesController < ApplicationController
       redirect_to root_path
     end
   end
-
     
   private
 

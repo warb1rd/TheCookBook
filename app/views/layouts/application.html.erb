@@ -36,12 +36,7 @@
                   <span class="nav-text">LOG OUT</span>
                   </a> -->
               </li> 
-              <li class="has-subnav">
-                  <a href="/recipes">  
-                    <i id = "flask" class="fa fa-flask fa-2x"></i>
-                  <span class="nav-text">MY RECIPES</span>
-                  </a>       
-              </li>
+             
               <li class="has-subnav">
                   <a href="/users/<%= current_user.id %>">
                     <i class="fa fa-user-secret fa-2x"></i>
@@ -78,12 +73,13 @@
           </ul>  
       </nav>
 
-    <div class = "search-form">
+    <div class="search-form">
         <%= form_tag(recipes_path, method: "get") do %>
             <%= text_field_tag :search, params[:search],size:"20x1", placeholder: "Search Recipes" %>
             <%= submit_tag "Search", class: "btn btn-primary", name: nil %>
         <% end %>
     </div>
+    
     <div class="container">
     <%= yield %>
     </div>

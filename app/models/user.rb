@@ -1,5 +1,7 @@
 class User < ApplicationRecord
     has_many :recipes, dependent: :destroy                               #Allows you to add .method on @user
+    has_many :comments
+
     has_secure_password                                                  #its a validation that authenticates and encrypts password and matches passwords
     validates :username, presence: true                                  # validates whether the name and email inputs are filled in.
     validates :username, length: { minimum: 2 }

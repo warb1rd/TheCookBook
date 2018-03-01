@@ -1,8 +1,10 @@
 <div class="all-users" >
     <% @users.each do|u|%>
         <div class="wrapper">
-        <span class"name"><%= u.username %></span><span class="recipe-path"><%= link_to "SHOW", user_path(u.id), class: "btn btn-primary" %></span>
+        <span class"name"><%= u.username %></span>
+        <span class="recipe-path"><%= link_to "Show", user_path(u.id), class: "btn btn-primary" %></span>        
         </div>
+        
     <% end %>
     
 </div>

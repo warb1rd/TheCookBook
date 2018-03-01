@@ -1,29 +1,30 @@
 
 <% if current_user %>  
-  <p id = "add-recipe"><%= link_to "ADD NEW RECIPE", new_recipe_path, class: "btn btn-primary"%> </p>                                                        <%#THIS ISN'T WORKING!ITS DOING THE OPPOSITE :|%>
+  <p id = "add-recipe"><%= link_to "ADD NEW RECIPE", new_recipe_path, class: "btn btn-primary"%> </p>                                                        
 <% end %> 
 
-<% if @recipes.blank? %>
-  <h4>There are no recipes containing the term <%= params[:search] %>.</h4>
+<% if @recipes.blank? %>                                                                                    <%#If recipes are blank, it runs this that shows a message. %>
+  <h4>No recipes found for term <%= params[:search] %>.</h4>    
 <% end %>
 
 <% @recipes.each do |r| %>
     
-<div class="card" style="width: 18rem;">
-  <div class="card-body">
-    <div class="img-box">
-    <% if r.image != nil && r.image != "" %>
-      <%= image_tag(r.image, class: "card-img-top") %>
-    <% else %>
-      <%= image_tag("ricebowl.png", class:"card-img-top") %>
-    <% end %>
+  <div class="card" style="width: 18rem;">
+    <div class="card-body">
+      <div class="img-box">
+      <% if r.image != nil && r.image != "" %>
+        <%= image_tag(r.image, class: "card-img-top") %>
+      <% else %>
+        <%= image_tag("ricebowl.png", class:"card-img-top") %>
+      <% end %>
+      </div>
+      <h5 class="card-title"><%= r.title %></h5>
+      <%= link_to "Show", "/recipes/#{r.id}", class: "btn btn-primary" %>
+      <% if current_user && r.user_id == current_user.id %>                                                          
+      <%= link_to "Delete Recipe", "/recipes/#{r.id}", class: "btn btn-primary", method: "delete", data: {confirm:"ARE YOU SURE?"} %>
+      <% end %> 
     </div>
-    <h5 class="card-title"><%= r.title %></h5>
-    <%= link_to "SHOW", "/recipes/#{r.id}", class: "btn btn-primary" %>
-    <% if current_user && r.user_id == current_user.id %>                                                          <%#THIS ISN'T WORKING!ITS DOING THE OPPOSITE :|%>
-    <%= link_to "DELETE RECIPE", "/recipes/#{r.id}", class: "btn btn-primary", method: "delete", data: {confirm:"ARE YOU SURE?"} %>
-    <% end %> 
   </div>
-</div>
+        
 <% end %>
 
