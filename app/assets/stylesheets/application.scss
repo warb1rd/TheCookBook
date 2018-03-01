@@ -159,6 +159,7 @@ body {
     background-color: #222629;
     color: #ff652f;
     border-color: #ff652f;
+    
 }
 
 .btn.btn-tiny {
@@ -166,6 +167,10 @@ body {
     color: #ff652f;
     border-color: #ff652f;
     width: 245px;
+}
+
+.btn-s {
+    float: right;
 }
 
 .col-md-6.offset-md-3 {
@@ -276,3 +281,7 @@ body {
    margin-right: 20px;
 }
 
+.username{
+    float: left;
+    padding-right: 10px;
+}

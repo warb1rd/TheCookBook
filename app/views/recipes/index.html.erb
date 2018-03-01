@@ -20,6 +20,7 @@
       </div>
       <h5 class="card-title"><%= r.title %></h5>
       <%= link_to "Show", "/recipes/#{r.id}", class: "btn btn-primary" %>
+      
       <% if current_user && r.user_id == current_user.id %>                                                          
       <%= link_to "Delete Recipe", "/recipes/#{r.id}", class: "btn btn-primary", method: "delete", data: {confirm:"ARE YOU SURE?"} %>
       <% end %> 

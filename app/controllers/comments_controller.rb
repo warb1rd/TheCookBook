@@ -21,14 +21,24 @@ class CommentsController < ApplicationController
   end
 
   def edit
-    @comment = Comment.find(params[:id])
+    @user = User.find(params[:id])
+    if @user != current_user
+      redirect_to root_path
+    end
 
+    @comment = Comment.find(params[:id])
   end
 
   def update
   end
 
   def delete
+    @comment = Comment.find(params[:id])
+    @comment.destroy
+    
+    if @comment.user_id != current_user.id
+      redirect_to root_path
+    end
   end
 
   private

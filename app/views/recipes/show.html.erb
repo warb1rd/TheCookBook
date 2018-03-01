@@ -1,31 +1,35 @@
 
 <div class="card" style="width: 18rem;">
   <div class="card-body">
-    <div class="img-box">
-    <% if @recipe.image != nil && @recipe.image != "" %>
+    <div class="img-box">   
+    <% if @recipe.image != nil && @recipe.image != "" %>                                                                                                    <%# If user has uploaded image/url show the image, else show the placeholder image %>
       <%= image_tag(@recipe.image, class: "card-img-top") %>
     <% else %>
       <%= image_tag("ricebowl.png", class:"card-img-top") %>
     <% end %>
     </div>
     <h5 class="card-title"><%= @recipe.title %></h5>
-    <p class="card-title"><%= raw @recipe.ingredients.gsub(/\r/, '<br/>') %></p>            <%#gsub(/\r/, '<br/>') - converts all the \returns or enters/ to a line break%>
+    <p class="card-title"><%= raw @recipe.ingredients.gsub(/\r/, '<br/>') %></p>                                                                            <%# gsub(/\r/, '<br/>') - converts all the \returns or enters/ to a line break%>
     <p class="card-title"><%= raw @recipe.directions.gsub(/\r/, '<br/>') %></p>
     <p class="card-title"><%= link_to @recipe.user.username, user_path(@recipe.user_id)  %></p>   
-    <%# link_to "Show Comments", recipe_comment_path, class: "btn btn-primary" %>
-    <% @recipe.comments.each do |c| %>
-      <%= c.body %> <%= c.user.username %>
-    <% end %>
     
-    <%= form_for [@recipe, @comment] do |f| %>
+    <% @recipe.comments.each do |c| %>                                                                                                                      <%# For each recipe's comment,show the body of the comment and the username of the commenter %>
+      <p><span class= "username"><%= link_to c.user.username, user_path(@recipe.user_id) %> says: </span> <%= c.body %>                                                                                   
+
+      <% if c.user == current_user %>                                                         
+        <%= link_to "Delete", "/comments/#{@comment.id}", method: "delete", data: {confirm:"ARE YOU SURE?"} %>
+      <% end %>
+    </p>
+    <% end %>
+
+    <%= form_for [@recipe, @comment] do |f| %>                                            
       <%= f.text_field :body, class: "form-control", placeholder:"Add a comment" %>
       <%= f.submit "Add", class: "btn btn-tiny" %>  
     <% end %>
 
-
-    <% if @user == current_user %>                                                          
+    <% if @recipe.user == current_user %>                                                         
         <%= link_to "Delete Recipe", "/recipes/#{@recipe.id}", class: "btn btn-primary", method: "delete", data: {confirm:"ARE YOU SURE?"} %>
-        <%= link_to "Edit Recipe", "/recipes/#{@recipe.id}/edit", class: "btn btn-primary" %>
+        <%= link_to "Edit Recipe", "/recipes/#{@recipe.id}/edit", class: "btn btn-primary btn-s" %>
     <% end %>
   </div>
 </div>
