@@ -39,7 +39,6 @@ class RecipesController < ApplicationController
   end
 
   def update
-    @user = User.find(params[:id])
     @recipe = Recipe.find(params[:id])
     @recipe.update(recipes_params) 
     @recipe.save 
