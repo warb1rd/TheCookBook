@@ -2,7 +2,7 @@
 ---
 We have been learning Ruby and Rails for the past two weeks and this project is based on our knowledge of what we learnt using full CRUD applications
 
-![TheCookBook](https://i.imgur.com/7TiOxUU.jpg)
+![TheCookBook](https://i.imgur.com/M3J0Ez0.jpg)
 
 ---
 ### Project Summary
@@ -98,6 +98,7 @@ As a user I would like to be able to see other users recipes and comment, if nec
 * Full CRUD for recipe model. 
 * CRD for comments model
 
+ Link to my [Trello](https://i.imgur.com/aeMsWUI.png)
 
 ---
 ### Dream Works

@@ -33,7 +33,7 @@ class RecipesController < ApplicationController
   def edit
       @recipe = Recipe.find(params[:id])
       @user = User.find(@recipe.user_id)   
-      if @user != current_user                                   # If the user is not logged in, the page redirects to root path. Won't let the person edit.
+      if @user != current_user                                                    # If the user is not logged in, the page redirects to root path. Won't let the person edit.
         redirect_to root_path
       end
   end
