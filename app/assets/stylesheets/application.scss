@@ -189,18 +189,21 @@ body {
 #title {
     text-align: left;
     font-weight:bolder;
-    margin-top: 20px;
     margin-left: 80px;  
-    width: 350px;
+    padding-top: 180px;
+    width: 600px;
+    letter-spacing: 8px;
+    font-size: 60px;
 }
 
 .description {
     text-align: justify;
-    margin-top: 220px;
+    margin-top: 20px;
     margin-left: -85px;
     line-height: 2;
-    background-color: #222629;
-    opacity: .75;
+    font-weight: bolder;
+    // background-color: #222629;
+    // opacity: .75;
     width: 1300px;
     padding-left: 170px; 
 }
@@ -284,4 +287,5 @@ body {
 .username{
     float: left;
     padding-right: 10px;
+    color: #222629;
 }
