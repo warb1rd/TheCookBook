@@ -4,6 +4,7 @@
     
     Share your quick recipes and discover more on The Cook Book </br>
     ps - there's no way to reset your password yet, so remember it! </br></br>
+    <% if logged_in? %> 
     <%= link_to "Sign Up !", "/users/new", class: "btn btn-primary" %> </br></h5>
-
+    <%end %>
 </div>
